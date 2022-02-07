@@ -2,16 +2,30 @@ require('dotenv').config();
 
 const PORT = 12345;
 
+const centra = require('centra');
 const { createHmac } = require('crypto');
 const { writeFile } = require('fs').promises;
+const floatplane = require('floatplane');
 
 
-function getStreams() {
-    // do something
+async function getStreams() {
+    const videos = await floatplane.creator.blogPosts("GarbageTime", { type: "video" }); 
+    console.log(videos)
+    const videoFile = File('videos.txt')
+    if (videos ==! videoFile) {
+        getStreamInfo(videos[1])
+    } else {
+        const promise = writeFile('videos.txt', videos)
+        await promise; 
+    }
+
 }
 
 function getStreamInfo() {
-    // hi
+    centra(process.env.FLOATPLANE_URI)
+        .method('POST')
+        .body(process.env.FLOATPLANE_GUID, 'json')
+        .header('Auth', process.env.FLOATPLANE_USERNAME)
 }
 
 
@@ -27,6 +41,8 @@ function dispatchDiscordWebhook(title, avatar_url, username) {
 		.body(message, 'json')
 		.send();
 }
+
+getStreams();
 
 
 
