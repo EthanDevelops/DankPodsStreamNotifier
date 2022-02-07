@@ -1,0 +1,25 @@
+{
+  "name": "dankpodsstreamnotifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"testing 123\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EthanDevelops/DankPodsStreamNotifier.git"
+  },
+  "keywords": [],
+  "author": "EthanDevelops (aether.codes)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EthanDevelops/DankPodsStreamNotifier/issues"
+  },
+  "homepage": "https://github.com/EthanDevelops/DankPodsStreamNotifier#readme",
+  "dependencies": {
+    "centra": "^2.5.0",
+    "dotenv": "^16.0.0",
+    "floatplane": "github:EthanDevelops/floatplaneAPI.ts"
+  }
+}
